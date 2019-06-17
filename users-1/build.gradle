@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.tend'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services'
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.4'
+	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-rest-webmvc
+	compile group: 'org.springframework.data', name: 'spring-data-rest-webmvc', version: '3.1.8.RELEASE'
+	
+	
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
